@@ -1332,13 +1332,14 @@ line-height:1.6
 
 /* =================================================
    SCHOOL LIFE PAGE
+   ONLY THIS PAGE HAS BEEN REDESIGNED
 ================================================= */
 
 .school-life-page{
 position:fixed;
 inset:0;
 z-index:1050;
-background:var(--soft);
+background:#f7faf9;
 overflow-y:auto;
 opacity:0;
 visibility:hidden;
@@ -1356,49 +1357,63 @@ transform:translateX(0)
 }
 
 /* =================================================
-   SCHOOL LIFE HEADER
-   trip4.jpg is the top background
+   SCHOOL LIFE HERO
 ================================================= */
 
 .school-life-header{
+min-height:680px;
+position:relative;
+overflow:hidden;
+color:white;
+padding:35px 8% 80px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 background:
 linear-gradient(
 90deg,
-rgba(16,35,38,.88) 0%,
-rgba(16,35,38,.65) 45%,
-rgba(16,35,38,.40) 100%
+rgba(10,31,34,.94) 0%,
+rgba(10,31,34,.72) 42%,
+rgba(10,31,34,.20) 100%
 ),
-url("assets/trip4.jpg");
+url("assets/culture1.jpg");
 background-size:cover;
 background-position:center;
-color:white;
-padding:35px 8% 65px;
-position:relative;
-overflow:hidden;
-min-height:520px;
-display:flex;
-flex-direction:column;
-justify-content:flex-start
+}
+
+.school-life-header::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+0deg,
+rgba(7,20,22,.80),
+transparent 45%
+);
+pointer-events:none
 }
 
 .school-life-header::after{
 content:"";
 position:absolute;
-width:430px;
-height:430px;
+width:520px;
+height:520px;
 border-radius:50%;
-background:rgba(24,184,200,.10);
-right:-140px;
-top:-190px
+right:-220px;
+top:-220px;
+border:1px solid rgba(255,255,255,.14);
+box-shadow:
+0 0 0 70px rgba(24,184,200,.04),
+0 0 0 140px rgba(24,184,200,.025)
 }
 
 .school-life-top{
 position:relative;
-z-index:2;
+z-index:5;
 display:flex;
 align-items:center;
-justify-content:space-between;
-margin-bottom:70px
+justify-content:space-between
 }
 
 .school-life-logo{
@@ -1415,8 +1430,9 @@ mix-blend-mode:screen
 
 .school-life-header-content{
 position:relative;
-z-index:2;
-max-width:850px
+z-index:5;
+max-width:950px;
+margin-bottom:25px
 }
 
 .school-life-number{
@@ -1424,26 +1440,49 @@ color:var(--yellow);
 font-size:11px;
 font-weight:700;
 letter-spacing:3px;
-margin-bottom:20px
+margin-bottom:25px
 }
 
 .school-life-header h1{
 font-family:"Playfair Display",serif;
-font-size:clamp(48px,7vw,85px);
-line-height:1;
-letter-spacing:-3px;
-margin-bottom:25px
+font-size:clamp(55px,8vw,105px);
+line-height:.94;
+letter-spacing:-4px;
+margin-bottom:30px
 }
 
 .school-life-header h1 span{
+display:block;
 color:var(--turquoise)
 }
 
 .school-life-header p{
-color:rgba(255,255,255,.85);
+max-width:620px;
+color:rgba(255,255,255,.84);
 font-size:17px;
-line-height:1.7;
-max-width:650px
+line-height:1.8
+}
+
+/* HERO DECORATION */
+
+.school-life-hero-tag{
+position:absolute;
+z-index:5;
+right:8%;
+bottom:70px;
+display:flex;
+align-items:center;
+gap:15px;
+font-size:10px;
+letter-spacing:2px;
+opacity:.75
+}
+
+.school-life-hero-tag::before{
+content:"";
+width:55px;
+height:1px;
+background:var(--yellow)
 }
 
 /* =================================================
@@ -1451,12 +1490,22 @@ max-width:650px
 ================================================= */
 
 .school-life-content{
-padding:85px 8% 110px
+padding:115px 7% 120px;
+background:#f7faf9
 }
 
+.school-life-container{
+max-width:1250px;
+margin:auto
+}
+
+/* INTRO */
+
 .school-life-intro{
-max-width:900px;
-margin:0 auto 65px
+display:grid;
+grid-template-columns:25% 1fr;
+gap:8%;
+margin-bottom:110px
 }
 
 .school-life-intro-label{
@@ -1464,48 +1513,353 @@ color:var(--turquoise-dark);
 font-size:11px;
 font-weight:700;
 letter-spacing:2px;
-margin-bottom:20px
+padding-top:10px
+}
+
+.school-life-intro-label span{
+color:#999;
+margin-right:12px
 }
 
 .school-life-intro h2{
 font-family:"Playfair Display",serif;
-font-size:clamp(38px,5vw,62px);
-line-height:1.08;
-letter-spacing:-2px;
+font-size:clamp(45px,6vw,75px);
+line-height:1;
+letter-spacing:-3px;
 color:var(--black);
-margin-bottom:25px
+margin-bottom:30px
 }
 
 .school-life-intro h2 span{
+display:block;
 color:var(--turquoise)
 }
 
 .school-life-intro p{
+max-width:720px;
 font-size:17px;
-line-height:1.85;
-color:#617274;
-max-width:750px
+line-height:1.9;
+color:#627476
 }
 
 /* =================================================
-   FIRST CLASSROOM FEATURE
+   SECTION LABEL
 ================================================= */
 
-.classroom-feature{
-max-width:1100px;
-margin:0 auto 90px;
-background:white;
-box-shadow:0 20px 60px rgba(16,35,38,.10);
-overflow:hidden
+.life-section-label{
+display:flex;
+align-items:center;
+gap:18px;
+margin-bottom:30px;
+color:var(--turquoise-dark);
+font-size:11px;
+font-weight:700;
+letter-spacing:2px
 }
 
-.classroom-image-wrapper{
-height:550px;
+.life-section-label span{
+color:#aaa
+}
+
+.life-section-label::after{
+content:"";
+height:1px;
+width:70px;
+background:#ccd9d7
+}
+
+/* =================================================
+   CULTURE FEATURE
+================================================= */
+
+.culture-section{
+margin-bottom:135px
+}
+
+.culture-layout{
+display:grid;
+grid-template-columns:1.3fr .7fr;
+gap:24px;
+align-items:end
+}
+
+.culture-main{
+position:relative;
+height:650px;
 overflow:hidden;
-position:relative
+background:var(--black)
 }
 
-.classroom-image-wrapper img{
+.culture-main img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:transform 1.2s ease
+}
+
+.culture-main:hover img{
+transform:scale(1.045)
+}
+
+.culture-main-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(
+0deg,
+rgba(8,24,27,.90),
+rgba(8,24,27,0) 58%
+)
+}
+
+.culture-main-content{
+position:absolute;
+left:45px;
+right:45px;
+bottom:40px;
+color:white
+}
+
+.culture-main-content small{
+color:var(--yellow);
+font-size:10px;
+font-weight:700;
+letter-spacing:2px
+}
+
+.culture-main-content h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(38px,5vw,65px);
+line-height:1;
+margin:12px 0 12px
+}
+
+.culture-main-content p{
+max-width:520px;
+font-size:14px;
+line-height:1.7;
+color:rgba(255,255,255,.8)
+}
+
+.culture-side{
+display:flex;
+flex-direction:column;
+gap:24px
+}
+
+.culture-side-image{
+height:390px;
+overflow:hidden;
+background:white
+}
+
+.culture-side-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .9s ease
+}
+
+.culture-side-image:hover img{
+transform:scale(1.05)
+}
+
+.culture-side-copy{
+background:var(--yellow);
+padding:35px 32px
+}
+
+.culture-side-copy small{
+font-size:10px;
+font-weight:700;
+letter-spacing:2px;
+color:var(--black)
+}
+
+.culture-side-copy h3{
+font-family:"Playfair Display",serif;
+font-size:32px;
+line-height:1.05;
+color:var(--black);
+margin:12px 0
+}
+
+.culture-side-copy p{
+font-size:13px;
+line-height:1.7;
+color:#26383a
+}
+
+/* =================================================
+   TRIPS / ADVENTURE
+================================================= */
+
+.trips-section{
+margin-bottom:135px
+}
+
+.trips-heading{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:end;
+margin-bottom:50px
+}
+
+.trips-heading h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(45px,6vw,72px);
+line-height:.98;
+letter-spacing:-3px;
+color:var(--black)
+}
+
+.trips-heading h2 span{
+color:var(--turquoise)
+}
+
+.trips-heading p{
+font-size:16px;
+line-height:1.85;
+color:#657577;
+max-width:520px;
+justify-self:end
+}
+
+.trip-gallery{
+display:grid;
+grid-template-columns:1.2fr .8fr 1fr;
+grid-template-rows:280px 280px;
+gap:18px
+}
+
+.trip-photo{
+position:relative;
+overflow:hidden;
+background:#dfe8e6
+}
+
+.trip-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:transform .9s ease
+}
+
+.trip-photo:hover img{
+transform:scale(1.06)
+}
+
+.trip-photo:nth-child(1){
+grid-row:1/3
+}
+
+.trip-photo:nth-child(2){
+grid-column:2;
+grid-row:1
+}
+
+.trip-photo:nth-child(3){
+grid-column:2;
+grid-row:2
+}
+
+.trip-photo:nth-child(4){
+grid-column:3;
+grid-row:1/3
+}
+
+.trip-photo-label{
+position:absolute;
+left:18px;
+bottom:18px;
+padding:8px 12px;
+background:rgba(16,35,38,.78);
+backdrop-filter:blur(8px);
+color:white;
+font-size:9px;
+font-weight:700;
+letter-spacing:1.5px
+}
+
+/* =================================================
+   TRIP STATEMENT
+================================================= */
+
+.trip-statement{
+margin-top:45px;
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:50px;
+align-items:start;
+border-top:1px solid #d5dfdd;
+padding-top:30px
+}
+
+.trip-statement-number{
+font-family:"Playfair Display",serif;
+font-size:60px;
+line-height:1;
+color:var(--turquoise)
+}
+
+.trip-statement p{
+font-family:"Playfair Display",serif;
+font-size:clamp(24px,3vw,36px);
+line-height:1.25;
+color:var(--black)
+}
+
+/* =================================================
+   OUTDOOR LIFE
+================================================= */
+
+.outdoor-section{
+margin-bottom:135px
+}
+
+.outdoor-header{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:40px;
+margin-bottom:45px
+}
+
+.outdoor-header h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(45px,6vw,72px);
+line-height:1;
+letter-spacing:-3px;
+color:var(--black)
+}
+
+.outdoor-header h2 span{
+color:var(--turquoise)
+}
+
+.outdoor-header p{
+max-width:450px;
+font-size:15px;
+line-height:1.8;
+color:#68787a
+}
+
+.outdoor-grid{
+display:grid;
+grid-template-columns:1fr 1.25fr 1fr;
+grid-template-rows:330px 330px;
+gap:18px
+}
+
+.outdoor-item{
+overflow:hidden;
+position:relative;
+background:#dce5e3
+}
+
+.outdoor-item img{
 width:100%;
 height:100%;
 object-fit:cover;
@@ -1513,162 +1867,327 @@ display:block;
 transition:transform 1s ease
 }
 
-.classroom-feature:hover .classroom-image-wrapper img{
-transform:scale(1.035)
+.outdoor-item:hover img{
+transform:scale(1.06)
 }
 
-.classroom-caption{
-padding:45px 50px 50px;
-display:grid;
-grid-template-columns:1fr 1.4fr;
-gap:60px
+.outdoor-item:nth-child(1){
+grid-row:1/3
 }
 
-.classroom-caption-label{
-font-size:11px;
+.outdoor-item:nth-child(2){
+grid-column:2;
+grid-row:1
+}
+
+.outdoor-item:nth-child(3){
+grid-column:2;
+grid-row:2
+}
+
+.outdoor-item:nth-child(4){
+grid-column:3;
+grid-row:1/3
+}
+
+.outdoor-caption{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:45px 22px 20px;
+background:linear-gradient(
+transparent,
+rgba(8,25,28,.78)
+);
+color:white;
+font-size:10px;
 font-weight:700;
-letter-spacing:2px;
-color:var(--turquoise-dark)
-}
-
-.classroom-caption h2{
-font-family:"Playfair Display",serif;
-font-size:clamp(34px,4vw,52px);
-line-height:1.05;
-color:var(--black);
-margin-bottom:20px
-}
-
-.classroom-caption h2 span{
-color:var(--turquoise)
-}
-
-.classroom-caption p{
-font-size:16px;
-line-height:1.85;
-color:#627375
+letter-spacing:1.5px
 }
 
 /* =================================================
-   SCHOOL LIFE STORY GRID
+   COMMUNITY / SPORTS DAY
 ================================================= */
 
-.school-life-stories{
-max-width:1100px;
-margin:0 auto
-}
-
-.school-life-section-title{
-margin-bottom:45px
-}
-
-.school-life-section-title small{
-display:block;
-color:var(--turquoise-dark);
-font-size:11px;
-font-weight:700;
-letter-spacing:2px;
-margin-bottom:15px
-}
-
-.school-life-section-title h2{
-font-family:"Playfair Display",serif;
-font-size:clamp(38px,5vw,60px);
-color:var(--black);
-line-height:1.05
-}
-
-.school-life-section-title h2 span{
-color:var(--turquoise)
-}
-
-.story-grid{
+.community-section{
+margin-bottom:135px;
+background:var(--black);
+color:white;
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px
-}
-
-.story-card{
-background:white;
-overflow:hidden;
-box-shadow:0 10px 35px rgba(16,35,38,.06);
-transition:.3s
-}
-
-.story-card:hover{
-transform:translateY(-7px);
-box-shadow:0 18px 45px rgba(16,35,38,.11)
-}
-
-.story-card-image{
-height:280px;
+grid-template-columns:1.45fr .75fr;
+min-height:650px;
 overflow:hidden
 }
 
-.story-card-image img{
+.community-image{
+position:relative;
+overflow:hidden
+}
+
+.community-image img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:transform .7s ease
+display:block;
+transition:transform 1.1s ease
 }
 
-.story-card:hover .story-card-image img{
-transform:scale(1.04)
+.community-section:hover .community-image img{
+transform:scale(1.035)
 }
 
-.story-card-content{
-padding:30px
+.community-image::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+90deg,
+transparent 50%,
+rgba(16,35,38,.55)
+)
 }
 
-.story-card-number{
+.community-copy{
+padding:75px 55px;
+display:flex;
+flex-direction:column;
+justify-content:center
+}
+
+.community-copy small{
+color:var(--yellow);
 font-size:10px;
 font-weight:700;
 letter-spacing:2px;
-color:var(--turquoise-dark);
-margin-bottom:15px
+margin-bottom:25px
 }
 
-.story-card h3{
+.community-copy h2{
 font-family:"Playfair Display",serif;
-font-size:29px;
-color:var(--black);
-margin-bottom:12px
+font-size:clamp(40px,5vw,62px);
+line-height:1;
+margin-bottom:25px
 }
 
-.story-card p{
-font-size:14px;
-line-height:1.8;
-color:#667678
+.community-copy h2 span{
+color:var(--turquoise)
+}
+
+.community-copy p{
+font-size:15px;
+line-height:1.85;
+color:rgba(255,255,255,.72);
+margin-bottom:30px
+}
+
+.community-quote{
+border-left:2px solid var(--yellow);
+padding-left:18px;
+font-family:"Playfair Display",serif;
+font-size:20px;
+line-height:1.4;
+color:white
 }
 
 /* =================================================
-   SCHOOL LIFE CLOSING
+   FUN DAY / EVERYDAY MOMENTS
+================================================= */
+
+.fun-section{
+margin-bottom:135px
+}
+
+.fun-heading{
+text-align:center;
+max-width:750px;
+margin:0 auto 55px
+}
+
+.fun-heading small{
+color:var(--turquoise-dark);
+font-size:10px;
+font-weight:700;
+letter-spacing:2px
+}
+
+.fun-heading h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(45px,6vw,72px);
+line-height:1;
+letter-spacing:-3px;
+color:var(--black);
+margin:15px 0 20px
+}
+
+.fun-heading h2 span{
+color:var(--turquoise)
+}
+
+.fun-heading p{
+font-size:15px;
+line-height:1.8;
+color:#667779
+}
+
+.fun-gallery{
+display:grid;
+grid-template-columns:1fr 1.15fr 1fr;
+gap:18px;
+align-items:center
+}
+
+.fun-photo{
+overflow:hidden;
+position:relative;
+background:#dce5e3
+}
+
+.fun-photo:nth-child(1),
+.fun-photo:nth-child(3){
+height:390px
+}
+
+.fun-photo:nth-child(2){
+height:520px
+}
+
+.fun-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:transform 1s ease
+}
+
+.fun-photo:hover img{
+transform:scale(1.055)
+}
+
+.fun-photo::after{
+content:"";
+position:absolute;
+inset:0;
+border:1px solid rgba(255,255,255,.15);
+pointer-events:none
+}
+
+/* =================================================
+   GRADUATION FINALE
+================================================= */
+
+.graduation-section{
+position:relative;
+min-height:700px;
+overflow:hidden;
+background:var(--black);
+color:white;
+display:flex;
+align-items:flex-end;
+margin-bottom:90px
+}
+
+.graduation-image{
+position:absolute;
+inset:0
+}
+
+.graduation-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:transform 1.2s ease
+}
+
+.graduation-section:hover .graduation-image img{
+transform:scale(1.025)
+}
+
+.graduation-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+0deg,
+rgba(8,24,27,.96) 0%,
+rgba(8,24,27,.68) 42%,
+rgba(8,24,27,.08) 100%
+)
+}
+
+.graduation-content{
+position:relative;
+z-index:2;
+padding:65px;
+max-width:850px
+}
+
+.graduation-content small{
+color:var(--yellow);
+font-size:10px;
+font-weight:700;
+letter-spacing:3px
+}
+
+.graduation-content h2{
+font-family:"Playfair Display",serif;
+font-size:clamp(50px,7vw,85px);
+line-height:.95;
+letter-spacing:-3px;
+margin:18px 0 25px
+}
+
+.graduation-content h2 span{
+color:var(--turquoise)
+}
+
+.graduation-content p{
+max-width:620px;
+font-size:16px;
+line-height:1.8;
+color:rgba(255,255,255,.8);
+margin-bottom:30px
+}
+
+/* =================================================
+   CLOSING STATEMENT
 ================================================= */
 
 .school-life-closing{
-max-width:900px;
-margin:90px auto 0;
-background:var(--yellow);
-padding:60px;
-text-align:center
+max-width:950px;
+margin:0 auto;
+text-align:center;
+padding:80px 30px 100px
+}
+
+.school-life-closing-label{
+color:var(--turquoise-dark);
+font-size:10px;
+font-weight:700;
+letter-spacing:3px;
+margin-bottom:20px
 }
 
 .school-life-closing h2{
 font-family:"Playfair Display",serif;
-font-size:clamp(38px,5vw,55px);
+font-size:clamp(42px,6vw,70px);
+line-height:1;
+letter-spacing:-3px;
 color:var(--black);
-margin-bottom:15px
+margin-bottom:25px
 }
 
 .school-life-closing h2 span{
-color:var(--turquoise-dark)
+color:var(--turquoise)
 }
 
 .school-life-closing p{
-max-width:650px;
-margin:0 auto 30px;
+max-width:680px;
+margin:0 auto 35px;
+font-size:16px;
 line-height:1.8;
-color:var(--black)
+color:#657577
 }
 
 /* =================================================
@@ -1862,38 +2381,170 @@ grid-template-columns:1fr
 grid-column:auto
 }
 
-/* SCHOOL LIFE MOBILE */
+/* =================================================
+   SCHOOL LIFE TABLET
+================================================= */
 
 .school-life-header{
-padding:30px 7% 60px;
-min-height:470px;
-background-position:center
+min-height:590px;
+padding:30px 7% 65px
 }
 
-.school-life-top{
-margin-bottom:55px
+.school-life-header h1{
+font-size:clamp(50px,9vw,78px)
+}
+
+.school-life-hero-tag{
+right:7%;
+bottom:55px
 }
 
 .school-life-content{
-padding:65px 7% 80px
+padding:85px 7% 100px
 }
 
-.classroom-image-wrapper{
-height:400px
-}
-
-.classroom-caption{
+.school-life-intro{
 grid-template-columns:1fr;
 gap:25px;
-padding:35px 30px 40px
+margin-bottom:80px
 }
 
-.story-grid{
+.culture-layout{
 grid-template-columns:1fr
 }
 
-.school-life-closing{
-padding:45px 25px
+.culture-main{
+height:560px
+}
+
+.culture-side{
+display:grid;
+grid-template-columns:1fr 1fr
+}
+
+.culture-side-image{
+height:330px
+}
+
+.culture-side-copy{
+height:330px
+}
+
+.trips-heading{
+grid-template-columns:1fr;
+gap:25px
+}
+
+.trips-heading p{
+justify-self:start
+}
+
+.trip-gallery{
+grid-template-columns:1fr 1fr;
+grid-template-rows:300px 300px 300px
+}
+
+.trip-photo:nth-child(1){
+grid-column:1;
+grid-row:1/3
+}
+
+.trip-photo:nth-child(2){
+grid-column:2;
+grid-row:1
+}
+
+.trip-photo:nth-child(3){
+grid-column:2;
+grid-row:2
+}
+
+.trip-photo:nth-child(4){
+grid-column:1/3;
+grid-row:3
+}
+
+.trip-statement{
+grid-template-columns:1fr;
+gap:20px
+}
+
+.outdoor-header{
+display:block
+}
+
+.outdoor-header p{
+margin-top:20px
+}
+
+.outdoor-grid{
+grid-template-columns:1fr 1fr;
+grid-template-rows:300px 300px 300px
+}
+
+.outdoor-item:nth-child(1){
+grid-column:1;
+grid-row:1/3
+}
+
+.outdoor-item:nth-child(2){
+grid-column:2;
+grid-row:1
+}
+
+.outdoor-item:nth-child(3){
+grid-column:2;
+grid-row:2
+}
+
+.outdoor-item:nth-child(4){
+grid-column:1/3;
+grid-row:3
+}
+
+.community-section{
+grid-template-columns:1fr
+}
+
+.community-image{
+height:500px
+}
+
+.community-copy{
+padding:55px 45px
+}
+
+.fun-gallery{
+grid-template-columns:1fr 1fr
+}
+
+.fun-photo:nth-child(1),
+.fun-photo:nth-child(3){
+height:360px
+}
+
+.fun-photo:nth-child(2){
+height:450px;
+grid-column:1/3;
+grid-row:1
+}
+
+.fun-photo:nth-child(1){
+grid-column:1;
+grid-row:2
+}
+
+.fun-photo:nth-child(3){
+grid-column:2;
+grid-row:2
+}
+
+.graduation-section{
+min-height:620px
+}
+
+.graduation-content{
+padding:50px
 }
 
 }
@@ -1947,15 +2598,13 @@ font-size:43px
 }
 
 .about-header h1,
-.admission-header h1,
-.school-life-header h1{
+.admission-header h1{
 font-size:48px;
 letter-spacing:-2px
 }
 
 .about-header p,
-.admission-header p,
-.school-life-header p{
+.admission-header p{
 font-size:14px
 }
 
@@ -2001,52 +2650,243 @@ align-items:stretch
 width:100%
 }
 
-/* SCHOOL LIFE MOBILE */
+/* =================================================
+   SCHOOL LIFE MOBILE
+================================================= */
 
 .school-life-header{
-min-height:430px;
+min-height:590px;
 padding:25px 6% 50px;
 background-position:center
 }
 
+.school-life-top{
+margin-bottom:30px
+}
+
+.school-life-logo{
+width:85px;
+height:55px
+}
+
 .school-life-header h1{
-font-size:46px
+font-size:47px;
+letter-spacing:-2px
 }
 
 .school-life-header p{
+font-size:14px;
+line-height:1.75
+}
+
+.school-life-number{
+font-size:10px
+}
+
+.school-life-hero-tag{
+display:none
+}
+
+.school-life-content{
+padding:65px 6% 80px
+}
+
+.school-life-intro{
+margin-bottom:70px
+}
+
+.school-life-intro h2{
+font-size:43px;
+letter-spacing:-2px
+}
+
+.school-life-intro p{
+font-size:15px
+}
+
+.culture-section,
+.trips-section,
+.outdoor-section,
+.community-section,
+.fun-section{
+margin-bottom:90px
+}
+
+.culture-main{
+height:430px
+}
+
+.culture-main-content{
+left:25px;
+right:25px;
+bottom:25px
+}
+
+.culture-main-content h2{
+font-size:38px
+}
+
+.culture-side{
+display:flex;
+flex-direction:column;
+gap:15px
+}
+
+.culture-side-image{
+height:300px
+}
+
+.culture-side-copy{
+height:auto;
+padding:30px 25px
+}
+
+.culture-side-copy h3{
+font-size:29px
+}
+
+.life-section-label{
+margin-bottom:22px
+}
+
+.trips-heading h2,
+.outdoor-header h2,
+.fun-heading h2{
+font-size:43px;
+letter-spacing:-2px
+}
+
+.trips-heading p,
+.outdoor-header p,
+.fun-heading p{
 font-size:14px
 }
 
-.classroom-image-wrapper{
-height:280px
+.trip-gallery{
+display:grid;
+grid-template-columns:1fr;
+grid-template-rows:none;
+gap:12px
 }
 
-.classroom-caption{
-padding:30px 22px 35px
+.trip-photo:nth-child(1),
+.trip-photo:nth-child(2),
+.trip-photo:nth-child(3),
+.trip-photo:nth-child(4){
+grid-column:auto;
+grid-row:auto;
+height:290px
 }
 
-.classroom-caption h2{
-font-size:35px
+.trip-photo:nth-child(1){
+height:390px
 }
 
-.classroom-caption p{
+.trip-photo:nth-child(4){
+height:360px
+}
+
+.trip-statement{
+margin-top:30px;
+padding-top:25px
+}
+
+.trip-statement-number{
+font-size:45px
+}
+
+.trip-statement p{
+font-size:25px
+}
+
+.outdoor-grid{
+display:grid;
+grid-template-columns:1fr;
+grid-template-rows:none;
+gap:12px
+}
+
+.outdoor-item:nth-child(1),
+.outdoor-item:nth-child(2),
+.outdoor-item:nth-child(3),
+.outdoor-item:nth-child(4){
+grid-column:auto;
+grid-row:auto;
+height:300px
+}
+
+.outdoor-item:nth-child(1){
+height:390px
+}
+
+.community-section{
+margin-left:-6%;
+margin-right:-6%
+}
+
+.community-image{
+height:390px
+}
+
+.community-copy{
+padding:45px 28px 55px
+}
+
+.community-copy h2{
+font-size:42px
+}
+
+.community-copy p{
 font-size:14px
 }
 
-.story-card-image{
-height:230px
+.fun-gallery{
+display:flex;
+flex-direction:column;
+gap:12px
 }
 
-.story-card-content{
-padding:25px
+.fun-photo:nth-child(1),
+.fun-photo:nth-child(2),
+.fun-photo:nth-child(3){
+height:340px;
+width:100%
 }
 
-.story-card h3{
-font-size:26px
+.fun-photo:nth-child(2){
+height:420px
+}
+
+.graduation-section{
+min-height:600px;
+margin-left:-6%;
+margin-right:-6%
+}
+
+.graduation-content{
+padding:40px 25px
+}
+
+.graduation-content h2{
+font-size:50px;
+letter-spacing:-2px
+}
+
+.graduation-content p{
+font-size:14px
 }
 
 .school-life-closing{
-margin-top:60px
+padding:60px 5px 30px
+}
+
+.school-life-closing h2{
+font-size:43px;
+letter-spacing:-2px
+}
+
+.school-life-closing p{
+font-size:14px
 }
 
 }
@@ -3198,7 +4038,9 @@ class="school-life-page"
 id="schoolLifePage"
 >
 
-<!-- SCHOOL LIFE HEADER -->
+<!-- =================================================
+     SCHOOL LIFE HERO
+================================================= -->
 
 <div class="school-life-header">
 
@@ -3243,273 +4085,594 @@ Beyond the classroom.
 
 <p>
 
-At Jewels Junior School, learning is not limited
-to books and lessons. Our learners discover,
-play, create, interact and grow together.
+A school day is more than lessons. It is the
+sound of children discovering something new,
+the excitement of an adventure, the joy of
+friendship, the pride of achievement and the
+memories created along the way.
 
 </p>
 
 </div>
 
+<div class="school-life-hero-tag">
+EVERY DAY · A NEW MEMORY
+</div>
+
 </div>
 
 
-<!-- SCHOOL LIFE CONTENT -->
+<!-- =================================================
+     SCHOOL LIFE CONTENT
+================================================= -->
 
 <div class="school-life-content">
 
+<div class="school-life-container">
 
-<!-- INTRO -->
+
+<!-- =================================================
+     INTRO
+================================================= -->
 
 <div class="school-life-intro">
 
 <div class="school-life-intro-label">
-01 / OUR CLASSROOMS
+
+<span>
+01
+</span>
+
+THE JEWELS EXPERIENCE
+
 </div>
+
+<div>
 
 <h2>
 
-Where learning
+A childhood
 <span>
-comes alive.</span>
+worth remembering.</span>
 
 </h2>
 
 <p>
 
-Our classrooms are designed to give learners a
-comfortable and supportive environment where
-they can ask questions, explore ideas and develop
-the confidence to learn.
+At Jewels Junior School, we want children to
+experience education as something they can
+live, feel and remember. From discovering
+Zimbabwean culture to travelling together,
+playing outdoors, celebrating achievements
+and simply having fun, every experience becomes
+part of their journey.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =================================================
+     CULTURE
+================================================= -->
+
+<section class="culture-section">
+
+<div class="life-section-label">
+
+<span>
+02
+</span>
+
+CULTURE & HERITAGE
+
+</div>
+
+
+<div class="culture-layout">
+
+<div class="culture-main">
+
+<img
+src="assets/culture1.jpg"
+alt="Jewels Junior School learners experiencing Zimbabwean culture"
+>
+
+<div class="culture-main-overlay"></div>
+
+<div class="culture-main-content">
+
+<small>
+ROOTED IN OUR HERITAGE
+</small>
+
+<h2>
+Knowing where we come from.
+</h2>
+
+<p>
+
+Our learners are given opportunities to
+experience and appreciate the culture,
+traditions and heritage that surround them.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="culture-side">
+
+<div class="culture-side-image">
+
+<img
+src="assets/culture2.jpg"
+alt="Jewels Junior School learners with clay pots and wooden spoons"
+>
+
+</div>
+
+<div class="culture-side-copy">
+
+<small>
+LEARNING THROUGH EXPERIENCE
+</small>
+
+<h3>
+Tradition becomes a lesson.
+</h3>
+
+<p>
+
+Culture is not only something children read
+about. It becomes something they can see,
+touch, experience and understand.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     TRIPS
+================================================= -->
+
+<section class="trips-section">
+
+<div class="life-section-label">
+
+<span>
+03
+</span>
+
+ADVENTURE & DISCOVERY
+
+</div>
+
+
+<div class="trips-heading">
+
+<h2>
+
+The journey is
+<span>
+part of learning.</span>
+
+</h2>
+
+<p>
+
+There is something special about leaving the
+school grounds together. The anticipation,
+the conversations, the excitement of boarding
+a bus and discovering somewhere new all become
+part of the learning experience.
 
 </p>
 
 </div>
 
 
-<!-- CLASSROOM FIRST FEATURE -->
+<div class="trip-gallery">
 
-<div class="classroom-feature">
 
-<div class="classroom-image-wrapper">
+<div class="trip-photo">
 
 <img
-src="assets/classroom.jpg"
-alt="Jewels Junior School classroom"
+src="assets/trip1.jpg"
+alt="Jewels Junior School learners boarding a bus for a trip"
+>
+
+<div class="trip-photo-label">
+01 · THE DEPARTURE
+</div>
+
+</div>
+
+
+<div class="trip-photo">
+
+<img
+src="assets/trip2.jpg"
+alt="Jewels Junior School learners preparing for a trip"
+>
+
+<div class="trip-photo-label">
+02 · THE EXCITEMENT
+</div>
+
+</div>
+
+
+<div class="trip-photo">
+
+<img
+src="assets/trip5.jpg"
+alt="Jewels Junior School learners waiting to board the bus"
+>
+
+<div class="trip-photo-label">
+03 · THE ANTICIPATION
+</div>
+
+</div>
+
+
+<div class="trip-photo">
+
+<img
+src="assets/trip3.jpg"
+alt="Jewels Junior School learner preparing to enter a boat"
+>
+
+<div class="trip-photo-label">
+04 · THE ADVENTURE
+</div>
+
+</div>
+
+</div>
+
+
+<div class="trip-statement">
+
+<div class="trip-statement-number">
+03 / 04
+</div>
+
+<p>
+
+From the first step onto the bus to the moment
+a new place comes into view, every journey gives
+children another story to tell.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     OUTDOOR LIFE
+================================================= -->
+
+<section class="outdoor-section">
+
+<div class="life-section-label">
+
+<span>
+04
+</span>
+
+PLAY · MOVEMENT · DISCOVERY
+
+</div>
+
+
+<div class="outdoor-header">
+
+<h2>
+
+Childhood needs
+<span>
+room to play.</span>
+
+</h2>
+
+<p>
+
+Outdoor activities give learners space to move,
+explore, cooperate and simply enjoy being
+children. These moments are just as important
+as what happens inside the classroom.
+
+</p>
+
+</div>
+
+
+<div class="outdoor-grid">
+
+
+<div class="outdoor-item">
+
+<img
+src="assets/outdoor1.jpg"
+alt="Jewels Junior School learners during outdoor activities"
+>
+
+<div class="outdoor-caption">
+OUTDOOR EXPLORATION
+</div>
+
+</div>
+
+
+<div class="outdoor-item">
+
+<img
+src="assets/outdoor3.jpg"
+alt="Jewels Junior School learners enjoying outdoor activities"
+>
+
+<div class="outdoor-caption">
+DISCOVER · MOVE · GROW
+</div>
+
+</div>
+
+
+<div class="outdoor-item">
+
+<img
+src="assets/playtime.jpg"
+alt="Jewels Junior School learners enjoying playtime"
+>
+
+<div class="outdoor-caption">
+PLAYTIME
+</div>
+
+</div>
+
+
+<div class="outdoor-item">
+
+<img
+src="assets/playtime1.jpg"
+alt="Jewels Junior School learners participating in outdoor activities"
+>
+
+<div class="outdoor-caption">
+MEMORIES IN MOTION
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     SPORTS DAY / COMMUNITY
+================================================= -->
+
+<section class="community-section">
+
+<div class="community-image">
+
+<img
+src="assets/parents.jpg"
+alt="Parents supporting their children during sports day"
 >
 
 </div>
 
 
-<div class="classroom-caption">
-
-<div>
-
-<div class="classroom-caption-label">
-THE CLASSROOM
-</div>
-
-</div>
-
-<div>
-
-<h2>
-
-A place to
-<span>
-discover.</span>
-
-</h2>
-
-<p>
-
-Every school day brings a new opportunity to
-learn something, develop a new skill and build
-friendships. Our classrooms are at the heart of
-that experience.
-
-</p>
-
-<p>
-
-We encourage learners to participate, ask
-questions and become active participants in
-their own education.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- STORIES -->
-
-<div class="school-life-stories">
-
-<div class="school-life-section-title">
+<div class="community-copy">
 
 <small>
-02 / LIFE AT JEWELS
+05 / OUR COMMUNITY
 </small>
 
 <h2>
 
-More than
-<span>lessons.</span>
+When the whole school
+<span>
+comes together.</span>
 
 </h2>
+
+<p>
+
+School life becomes even more meaningful when
+parents, learners and teachers share the same
+moments. Sports day brings the wider Jewels
+community together in a spirit of encouragement,
+energy and fun.
+
+</p>
+
+<div class="community-quote">
+
+“Learning grows stronger when children know
+that their community is cheering them on.”
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     FUN DAY
+================================================= -->
+
+<section class="fun-section">
+
+<div class="fun-heading">
+
+<small>
+06 / EVERYDAY MEMORIES
+</small>
+
+<h2>
+
+Make room for
+<span>
+fun.</span>
+
+</h2>
+
+<p>
+
+Some of the best school memories are created
+when children are simply allowed to enjoy the
+moment together — creating, sharing, laughing
+and discovering new experiences.
+
+</p>
 
 </div>
 
 
-<div class="story-grid">
+<div class="fun-gallery">
 
 
-<!-- STORY 1 -->
-
-<article class="story-card">
-
-<div class="story-card-image">
+<div class="fun-photo">
 
 <img
-src="assets/students.jpg"
-alt="Jewels Junior School students"
+src="assets/funday.jpg"
+alt="Jewels Junior School learners enjoying a fun day"
 >
 
 </div>
 
-<div class="story-card-content">
 
-<div class="story-card-number">
-01 / LEARNING TOGETHER
-</div>
+<div class="fun-photo">
 
-<h3>
-Growing together.
-</h3>
-
-<p>
-
-School is a shared experience. Learners
-work together, support one another and
-develop the confidence to express their
-ideas.
-
-</p>
+<img
+src="assets/funday1.jpg"
+alt="Jewels Junior School learners cooking and serving food together"
+>
 
 </div>
 
-</article>
 
+<div class="fun-photo">
 
-<!-- STORY 2 -->
-
-<article class="story-card">
-
-<div class="story-card-content">
-
-<div class="story-card-number">
-02 / SCHOOL COMMUNITY
-</div>
-
-<h3>
-A family-centred school.
-</h3>
-
-<p>
-
-Jewels Junior School is built around a
-family-centred approach where learners
-are encouraged to feel valued, supported
-and part of the school community.
-
-</p>
-
-</div>
-
-</article>
-
-
-<!-- STORY 3 -->
-
-<article class="story-card">
-
-<div class="story-card-content">
-
-<div class="story-card-number">
-03 / DISCOVERY
-</div>
-
-<h3>
-Curiosity matters.
-</h3>
-
-<p>
-
-We encourage children to look beyond
-memorising information and develop
-curiosity, creativity and independent
-thinking.
-
-</p>
-
-</div>
-
-</article>
-
-
-<!-- STORY 4 -->
-
-<article class="story-card">
-
-<div class="story-card-content">
-
-<div class="story-card-number">
-04 / CHARACTER
-</div>
-
-<h3>
-Building character.
-</h3>
-
-<p>
-
-Education is also about becoming a person
-of confidence, responsibility, integrity
-and good character.
-
-</p>
-
-</div>
-
-</article>
-
+<img
+src="assets/playtime2.jpg"
+alt="Jewels Junior School learners roller skating"
+>
 
 </div>
 
 </div>
 
+</section>
 
-<!-- CLOSING -->
 
-<div class="school-life-closing">
+<!-- =================================================
+     GRADUATION
+================================================= -->
+
+<section class="graduation-section">
+
+<div class="graduation-image">
+
+<img
+src="assets/graduation.jpg"
+alt="Jewels Junior School ECD learners at graduation"
+>
+
+</div>
+
+<div class="graduation-overlay"></div>
+
+
+<div class="graduation-content">
+
+<small>
+07 / MILESTONES
+</small>
 
 <h2>
 
-Every day is a chance
-to <span>grow.</span>
+Small beginnings.
+
+<span>
+Big futures.</span>
 
 </h2>
 
 <p>
 
-At Jewels Junior School, we want every learner
-to leave each school day having discovered
-something new about themselves and the world
-around them.
+Every learner deserves moments worth celebrating.
+Graduation is one of those moments — a reminder
+of how far a child has come and a glimpse of all
+that still lies ahead.
+
+At Jewels Junior School, we celebrate every step
+of the journey.
+
+</p>
+
+<a
+href="#"
+class="primary-button"
+onclick="openAdmission(event)"
+>
+
+Begin the Journey
+
+<span>
+→
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     CLOSING
+================================================= -->
+
+<div class="school-life-closing">
+
+<div class="school-life-closing-label">
+CONSTRUA CRAS · BUILD TOMORROW
+</div>
+
+<h2>
+
+Every day becomes
+<span>a memory.</span>
+
+</h2>
+
+<p>
+
+From culture and adventure to play, friendship,
+community and achievement, school life at Jewels
+is about giving children experiences that help
+them grow into the people they are becoming.
 
 </p>
 
@@ -3529,6 +4692,8 @@ Join Jewels Junior School
 
 </div>
 
+
+</div>
 
 </div>
 
